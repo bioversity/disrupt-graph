@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Disrupt</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+
+    <!-- <style type="text/css">
+            table { 
+                top: 10%; 
+                left: 10%;
+                right: 10%; 
+            }
+    </style> -->
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Overall scores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ethiopia.html">Ethiopia scores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mozambique.html">Mozambique scores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bangladesh.html">Bangladesh scores</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3 align="center">
+            Overall scores
+          </h3>
+        </div>
+      </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+          <div class="table-responsive">   
+            <table
+              data-toggle="table"
+              data-search="true"
+              data-custom-search="customSearch"
+              data-url="js/data_all.json">
+              <thead>
+                <tr>
+                  <th data-sortable="true" data-field="Innovation">Innovation</th>
+                  <th data-sortable="true" data-field="Cluster">Cluster</th>
+                  <th data-sortable="true" data-field="freq" data-cell-style="cellStyleF">Frequency</th>
+                  <th data-sortable="true" data-field="Number Context">Contexts</th>
+                  <th data-sortable="true" data-field="Nutrition_total" data-cell-style="cellStyleN">Nutrition score</th>
+                  <th data-sortable="true" data-field="Planet_total" data-cell-style="cellStyleP">Planet score</th>
+                  <th data-sortable="true" data-field="LEAPFROGGING" data-cell-style="cellStyleL">Leapfrogging score</th>
+                  <th data-sortable="true" data-field="EQUITY" data-cell-style="cellStyleE">Equity score</th>
+                  <th data-sortable="true" data-field="score_9" data-cell-style="cellStyleO">Overall score</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+
+    <script>
+      $(function() {
+        $('#table').bootstrapTable({
+          formatSearch: function () {
+            return 'Search Innovations'
+          }
+        })
+      })
+
+      function customSearch(data, text) {
+        return data.filter(function (row) {
+          return row.Innovation.indexOf(text) > -1
+        })
+      }
+    </script>
+    <script>
+      function cellStyleF(value, row, index) {
+        var median = ['5.000000','2.000000','3.00000','3.120000','0.670000','0.620000','49.120000']
+        console.log(row)
+        if (value < median[0]) {
+          return {
+            css: {
+              "color": 'red'
+            }
+          }
+        }
+        return {
+          css: {
+            color: 'black'
+          }
+        }
+      }
+
+      function cellStyleN(value, row, index) {
+        var median = ['5.000000','2.000000','3.00000','3.120000','0.670000','0.620000','49.120000']
+        console.log(row)
+        if (value < median[2]) {
+          return {
+            css: {
+              "color": 'red'
+            }
+          }
+        }
+        return {
+          css: {
+            color: 'black'
+          }
+        }
+      }
+
+      function cellStyleP(value, row, index) {
+        var median = ['5.000000','2.000000','3.00000','3.120000','0.670000','0.620000','49.120000']
+        console.log(row)
+        if (value < median[3]) {
+          return {
+            css: {
+              "color": 'red'
+            }
+          }
+        }
+        return {
+          css: {
+            color: 'black'
+          }
+        }
+      }
+      function cellStyleL(value, row, index) {
+        var median = ['5.000000','2.000000','3.00000','3.120000','0.670000','0.620000','49.120000']
+        console.log(row)
+        if (value < median[4]) {
+          return {
+            css: {
+              "color": 'red'
+            }
+          }
+        }
+        return {
+          css: {
+            color: 'black'
+          }
+        }
+      }
+      function cellStyleE(value, row, index) {
+        var median = ['5.000000','2.000000','3.00000','3.120000','0.670000','0.620000','49.120000']
+        console.log(row)
+        if (value < median[5]) {
+          return {
+            css: {
+              "color": 'red'
+            }
+          }
+        }
+        return {
+          css: {
+            color: 'black'
+          }
+        }
+      }
+      function cellStyleO(value, row, index) {
+        var median = ['5.000000','2.000000','3.00000','3.120000','0.670000','0.620000','49.120000']
+        console.log(row)
+        if (value < median[6]) {
+          return {
+            css: {
+              "color": 'red'
+            }
+          }
+        }
+        return {
+          css: {
+            color: 'black'
+          }
+        }
+      }
+    </script>
+
+  </body>
+</html>
