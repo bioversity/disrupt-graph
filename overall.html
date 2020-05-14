@@ -68,10 +68,11 @@
               data-custom-search="customSearch"
               data-filter-control="true"
               data-show-search-clear-button="true"
+              data-show-columns="true"
               data-url="js/data_all.json">
               <thead>
                 <tr>
-                  <th data-sortable="true" data-field="Innovation">Innovation</th>
+                  <th data-sortable="true" data-field="Innovation" data-formatter="LinkFormatter">Innovation</th>
                   <th data-sortable="true" data-field="Cluster" data-filter-control="select">Cluster</th>
                   <th data-sortable="true" data-field="freq" data-cell-style="cellStyleF">Frequency</th>
                   <th data-sortable="true" data-field="Number Context">Contexts</th>
@@ -106,6 +107,10 @@
         return data.filter(function (row) {
           return row.Innovation.indexOf(text) > -1
         })
+      }
+
+      function LinkFormatter(value, row, index) {
+          return "<a href='innovation.html?a="+row.Innovation+"'>"+value+"</a>";
       }
     </script>
     <script>
