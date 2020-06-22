@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Disrupt - score table</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+
+    <!-- <style type="text/css">
+            table { 
+                top: 10%; 
+                left: 10%;
+                right: 10%; 
+            }
+    </style> -->
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Overall scores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ethiopia scores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mozambique scores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Bangladesh scores</a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3 align="center">
+            Users and Beneficiaries
+          </h3>
+        </div>
+      </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+          <div class="table-responsive">   
+            <table
+              data-toggle="table"
+              data-search="true"
+              data-url="js/users.json">
+              <thead>
+                <tr>
+                  <th data-sortable="true" data-field="Inputs" data-formatter="tooltipFormatter">Inputs</th>
+                  <th data-sortable="true" data-field="Primary production" data-formatter="tooltipFormatter">Primary production</th>
+                  <th data-sortable="true" data-field="Handling, storage and transport" data-formatter="tooltipFormatter">Handling, storage and transport</th>
+                  <th data-sortable="true" data-field="Processing and packaging" data-formatter="tooltipFormatter">Processing and packaging</th>
+                  <th data-sortable="true" data-field="Wholesale and distribution" data-formatter="tooltipFormatter">Wholesale and distribution</th>
+                  <th data-sortable="true" data-field="Markets & retail" data-formatter="tooltipFormatter">Markets and retail</th>
+                  <th data-sortable="true" data-field="Consumers" data-formatter="tooltipFormatter">Consumers</th>
+                  <th data-sortable="true" data-field="Food system actors" data-formatter="tooltipFormatter">Food system actors</th>
+                  <th data-sortable="true" data-field="Regulatory actors" data-formatter="tooltipFormatter">Regulatory actors</th>
+                  <th data-sortable="true" data-field="Financial actors" data-formatter="tooltipFormatter">Financial actors</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+
+    <script>
+      $(function() {
+        $('#table').bootstrapTable({
+          formatSearch: function () {
+            return 'Search Innovations'
+          }
+        })
+      })
+
+      // function customSearch(data, text) {
+      //   return data.filter(function (row) {
+      //     return row.Innovation.indexOf(text) > -1
+      //   })
+      // }
+
+      function tooltipFormatter(value, row, index) {
+          return "<a href='#' data-toggle='tooltip' data-placement='right' title='Innovation X, Innovation Y'>"+value+"</a>";
+      }
+
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip({
+            container: 'body'
+        })
+    })
+    </script>
+  </body>
+</html>
