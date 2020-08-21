@@ -24,6 +24,7 @@
       <div class="row">
         <div class="col-md-12">
           <ul class="nav">
+             <img border="0" src="images/ProjectDisrupt_logos.png" width="300px" height="auto">
             <li class="nav-item">
               <a class="nav-link active" href="home.html">Home</a>
             </li>
@@ -39,12 +40,6 @@
             <li class="nav-item">
               <a class="nav-link" href="bangladesh.html">Bangladesh scores</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="planetdiet.html">Enhancing diets and planet scores</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="frequency.html">Frequency graph</a>
-            </li> -->
           </ul>
         </div>
       </div>
@@ -53,11 +48,17 @@
           <h3 align="center">
             Overall scores
           </h3>
-          <h5>
-            <span style="color: #ff0000">Red scores</span> indicate that the score is under median value for a given criteria
-          </h5>
         </div>
       </div>
+      <div class="row mt-3 justify-content-md-center" >
+        <div class="col col-lg-2 col-md-auto"/>
+        </div>
+        <div class="col">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <div class="col col-lg-2 col-md-auto">
+        </div>
+       </div> 
     
     <div class="row">
       <div class="col-md-12">
@@ -75,7 +76,7 @@
                   <th data-sortable="true" data-field="Innovation" data-formatter="LinkFormatter">Innovation</th>
                   <th data-sortable="true" data-field="Cluster" data-filter-control="select">Cluster</th>
                   <th data-sortable="true" data-field="freq" data-cell-style="cellStyleF">Frequency</th>
-                  <th data-sortable="true" data-field="Number Context">Contexts</th>
+                  <th data-sortable="true" data-field="Number Context" data-visible="false">Contexts</th>
                   <th data-sortable="true" data-field="Nutrition_total" data-cell-style="cellStyleN">Nutrition score</th>
                   <th data-sortable="true" data-field="Planet_total" data-cell-style="cellStyleP">Planet score</th>
                   <th data-sortable="true" data-field="LEAPFROGGING" data-cell-style="cellStyleL">Leapfrogging score</th>
@@ -87,12 +88,21 @@
           </div>
         </div>
       </div>
+
+      <div id="footer" class="row mt-5">
+        <div class="col" align="center">
+          <a href="home.html">
+            <img border="0" src="images/ProjectDisrupt_logos.png" width="300px" height="auto">
+          </a>
+        </div>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+
 
     <script>
       $(function() {
